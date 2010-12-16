@@ -71,6 +71,13 @@ public class Picon extends Activity implements OnClickListener {
     }
 
     @Override
+    public void onDestroy() {
+        unregisterReceiver(mUpdateUIReceiver);
+        unregisterReceiver(mAuthPermissionReceiver);
+        super.onDestroy();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         if (mPendingAuth) {
