@@ -46,41 +46,18 @@ public class C2DMReceiver extends C2DMBaseReceiver {
 
     @Override
     public void onError(Context context, String errorId) {
-        //context.sendBroadcast(new Intent("com.google.ctp.UPDATE_UI"));
+        context.sendBroadcast(new Intent(Picon.UPDATE_UI_ACTION));
     }
 
     @Override
     public void onMessage(Context context, Intent intent) {
         Bundle extras = intent.getExtras();
+        Log.d(LOG_TAG, "onMessage");
         if (extras != null) {
-            String url = (String) extras.get("url");
-            String title = (String) extras.get("title");
-            String sel = (String) extras.get("sel");
-            Log.d(LOG_TAG, "onMessage: " + url + ", " + title + ", " + sel );
-/*
-            if (title != null && url != null && url.startsWith("http")) {
-                SharedPreferences settings = Prefs.get(context);
-                Intent launchIntent = LauncherUtils.getLaunchIntent(context, title, url, sel);
-
-                // Notify and optionally start activity
-                if (settings.getBoolean("launchBrowserOrMaps", true) && launchIntent != null) {
-                    LauncherUtils.playNotificationSound(context);
-                    context.startActivity(launchIntent);
-                } else {
-                    if (sel != null && sel.length() > 0) {  // have selection
-                        LauncherUtils.generateNotification(context, sel,
-                                context.getString(R.string.copied_desktop_clipboard), launchIntent);
-                    } else {
-                        LauncherUtils.generateNotification(context, url, title, launchIntent);
-                    }
-                }
-
-                // Record history (for link/maps only)
-                if (launchIntent != null && launchIntent.getAction().equals(Intent.ACTION_VIEW)) {
-                    HistoryDatabase.get(context).insertHistory(title, url);
-                }
-            }
-            */
+            String event = (String) extras.get("event");
+            String text = (String) extras.get("text");
+            String priority = (String) extras.get("priority");
+            Log.d(LOG_TAG, "Extras: " + event + ", " + text + ", " + priority );
         }
     }
 }
