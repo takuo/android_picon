@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <TableLayout android:layout_width="wrap_content" 
+                 android:layout_height="wrap_content">
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@+id/label_select_account"
+                      android:layout_height="wrap_content"
+                      android:layout_width="wrap_content"
+                      android:text="@string/label_select_account" />
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ListView android:id="@+id/list_accounts"
+                      android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+                <Button android:text="@string/label_register"
+                        android:id="@+id/button_register"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+            </LinearLayout>
+        </TableRow>
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/google_apps_warning_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/google_apps_warning_text"
+        android:textColor="#FFFFFF"
+        android:layout_above="@+id/progress_bar"
+        android:layout_margin="5dip"/>
+        </TableRow>
+
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+        
+    <ProgressBar android:id="@+id/progress_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginBottom="0dip"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
+        android:visibility="invisible"/>
+        </TableRow>
+
+        <TableRow android:layout_width="wrap_content" android:layout_height="wrap_content">
+        
+    <TextView
+        android:id="@+id/connecting_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/connecting_text"
+        android:textColor="#FFFFFF"
+        android:visibility="invisible"/>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>
+

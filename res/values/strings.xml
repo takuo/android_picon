@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Picon</string>
+    <string name="accounts_label">Google Accounts</string>
+    <string name="no_accounts">No account is available!</string>
+    <string name="label_select_account">Select a Google Account</string>
+    <string name="label_register">Register</string>
+    <string name="google_apps_warning_text">Currently does not support Google Apps account.</string>
+    <string name="connecting_text">Connecting...</string>
+    <string name="auth_error_text">Failed to authentication</string>
+    <string name="connect_error_text">Failed to connect to server</string>
+</resources>
